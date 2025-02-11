@@ -1,0 +1,65 @@
+
+/* Style du footer */
+.footerscore {
+    background-color: #407060; /* Couleur de fond du pied de page */
+    padding: 20px; /* Ajoute un espace de 20px à l'intérieur du pied de page */
+    text-align: center; /* Centre le contenu à l'intérieur du pied de page */
+}
+
+/* Conteneur principal pour aligner les sections dans le footer */
+.footer-container {
+    display: flex; /* Utilise un système de mise en page flexible pour disposer les sections horizontalement */
+    justify-content: space-between; /* Espace les sections uniformément avec de l'espace entre elles */
+    flex-wrap: wrap; /* Permet aux sections de revenir à la ligne si l'espace est insuffisant */
+}
+
+/* Sections individuelles dans le footer */
+.footer-section {
+    margin: 20px; /* Ajoute une marge de 20px autour de chaque section */
+    width: 100%; /* Chaque section prend 40% de la largeur disponible */
+}
+
+/* Style des liens */
+a {
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    color: #000; /* Définit la couleur des liens en noir */
+}
+
+/* Style pour les marges entre les éléments du texte */
+p, span {
+    margin: 10px 0; /* Ajoute une marge verticale de 10px entre les paragraphes et les span */
+}
+
+
+
+
+.reseau_footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 30px;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 780px) {
+
+    .footerscore {
+        background-color: #407060; /* Couleur de fond du pied de page */
+        padding: 20px; /* Ajoute un espace de 20px à l'intérieur du pied de page */
+        text-align: center; /* Centre le contenu à l'intérieur du pied de page */
+    }
+
+    /* Conteneur principal pour aligner les sections dans le footer */
+    .footer-container {
+        display: flex; /* Utilise un système de mise en page flexible pour disposer les sections horizontalement */
+        justify-content: space-between; /* Espace les sections uniformément avec de l'espace entre elles */
+        flex-wrap: wrap; /* Permet aux sections de revenir à la ligne si l'espace est insuffisant */
+    }
+
+    /* Sections individuelles dans le footer */
+    .footer-section {
+        margin: 20px; /* Ajoute une marge de 20px autour de chaque section */
+        width: 100%; /* Chaque section prend 40% de la largeur disponible */
+    }
+}
+

@@ -1,0 +1,504 @@
+/* -------------------------------  chat box ----------------------------------------------------------- */
+
+
+
+/* style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* style de la page */
+body {
+    overflow-x: hidden;
+    background: #407060;
+}
+
+/* boutton flottant */
+label{
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    height: 55px;
+    width: 55px;
+    background: #5f8441;
+    text-align: center;
+    line-height: 55px;
+    border-radius: 50px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* pour placer l'image a l'interieur du bouton */
+label i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.4s ease;
+}
+
+/* icone alternative */
+label i.fas{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#click:checked ~ label i.fas{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) rotate(180deg);
+}
+
+/* disparition de l'image du boutton */
+.chat-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    transition: all 0.4s ease;
+}
+
+#click:checked ~ label .chat-icon {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* boite chat invisible */
+.wrapper{
+    position: fixed;
+    right: 30px;
+    bottom: 0px;
+    max-width: 400px;
+    background: #183628;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+/* faire apparaitre la boite chat */
+#click:checked ~ .wrapper{
+    opacity: 1;
+    bottom: 85px;
+    pointer-events: auto;
+}
+
+/* header de la boite de chat */
+.wrapper .head-text{
+    line-height: 60px;
+    color: #183628;
+    border-radius: 8px 8px 0 0;
+    padding: 0 20px;
+    font-weight: 500;
+    font-size: 20px;
+    background: #5f8441;
+}
+
+/* contenu de la boite chat */
+.wrapper .chat-box{
+    padding: 20px;
+    width: 100%;
+}
+
+/* texte dans la boite */
+.chat-box .desc-text{
+    color: #ffffff;
+    text-align: center;
+    line-height: 25px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* formulaire */
+.chat-box form{
+    padding: 10px 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+
+.chat-box form .field{
+    height: 50px;
+    width: 100%;
+    margin-top:20px;
+}
+
+.chat-box form .field:last-child{
+    margin-bottom: 15px;
+}
+
+/* formulaire champs */
+form .field input,
+form .field button{
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    border: 1px solid lightgray;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+form .field input:focus{
+    border-color: #5f8441;
+}
+
+form .field input::placeholder{
+    color: silver;
+    transition: all 0.3s ease;
+}
+
+form .field input:focus::placeholder{
+    color: lightgray;
+}
+
+/* boutton de fin */
+.chat-box form .field button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    background: #5f8441;
+    transition: all 0.3s ease;
+}
+
+.chat-box form .field button:active{
+    transform: scale(0.97);
+}
+
+/* chacher loe clique */
+#click{
+    display: none;
+}
+
+
+/* Styles pour la classe 'colorbuttomheader' */
+.colorbuttomheader {
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transition douce pour le fond */
+}
+
+/* Effet de survol */
+.colorbuttomheader:hover {
+    background-color: #407060; /* Couleur du fond quand on survole */
+}
+.capybara_zone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Hauteur égale à la taille de la fenêtre */
+    overflow: hidden; /* Empêche les éléments de déborder */
+    pointer-events: none; /* Désactive les interactions avec les capybaras */
+    z-index: 1; /* Si besoin, ajuste pour gérer la superposition des éléments */
+}
+.capybara {
+    animation: animate 3s linear infinite;
+    position: absolute;
+    top: -200px;
+    /*animation-duration: calc(10s / var(--i));*/
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url("assets/police/Futura.ttf")
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(0vh);
+    }
+    100%
+    {
+        transform: translateY(400vh);
+    }
+
+}
+
+
+
+.capybara.zero{
+    left: 0%;
+
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+.capybara.one{
+    left: 10%;
+
+    animation-delay: 2s;
+    animation-duration: 6s;
+
+}
+
+.capybara.two{
+    left: 20%;
+
+    animation-delay: 1s;
+    animation-duration: 6s;
+
+}
+.capybara.three{
+    left: 30%;
+
+    animation-delay: 3s;
+    animation-duration: 6s;
+
+}
+.capybara.four{
+    left: 40%;
+
+    animation-delay: 5s;
+    animation-duration: 6s;
+
+}
+.capybara.five{
+    left: 50%;
+
+    animation-delay: 4s;
+    animation-duration: 6s;
+
+}
+.capybara.six{
+    left: 60%;
+
+    animation-delay: 1s;
+    animation-duration: 6s;
+
+}
+.capybara.seven{
+    left: 70%;
+
+    animation-delay: 2s;
+    animation-duration: 6s;
+
+}
+.capybara.height{
+    left: 80%;
+
+    animation-delay: 3s;
+    animation-duration: 6s;
+
+}
+.capybara.nine{
+    left: 90%;
+
+    animation-delay: 2s;
+    animation-duration: 6s;
+
+}
+
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 3rem 12.5rem;
+}
+
+figure {
+    margin: 0;
+}
+
+figure img {
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+}
+
+.item.one {
+    max-width:250px;
+    border-radius: 10px;
+}
+
+.item.two {
+    max-width:213.333px ;
+}
+
+.item.three {
+    max-width:250px ;
+}
+
+.texte {
+    /* espaces entre la puces et l'imges*/
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.texte img {
+    margin-right: 15px;
+}
+
+.texte p {
+    font-size: 15px;
+    margin-top:-2px;
+    color: white;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 12.5rem;
+}
+
+.images_stats img{
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px 2px rgb(0, 0, 0);
+}
+
+.info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.elements{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    height: 100px;
+    width: 300px;
+    background: #2e6f1f;
+    border-radius: 25px;
+}
+
+.pp{
+    align-content: center;
+    text-align: center;
+}
+
+.titre_équipe{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.notre_equipe{
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 12.5rem;
+
+}
+
+.membres{
+    background: #0a3a00;
+    padding: 20px 30px;
+    border-radius: 10%;
+    box-shadow: 5px 7px 4px rgb(0, 0, 0);
+}
+
+.nom{
+    display: flex;
+    justify-content: center;
+    padding: -5px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.role{
+    display: flex;
+    justify-content: center;
+    padding: -5px 20px;
+}
+
+.reseau{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 20px;
+    font-size: 20px;
+}
+
+.images{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+
+/* Style des liens */
+
+
+/* Style pour les marges entre les éléments du texte */
+p, span {
+    margin: 10px 0; /* Ajoute une marge verticale de 10px entre les paragraphes et les span */
+}
+
+body{
+    font-family: "Futura";
+    background-color: #141f23;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.icone {
+    align-content: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 780px) {
+
+
+    .description{
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+    }
+
+    .stats{
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+    }
+
+    .info{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 40px 0px;
+    }
+
+    .notre_equipe {
+        flex-direction: column;
+        padding: 1.5rem 4rem;
+    }
+
+    .membres{
+        padding: 10px 35px 10px;
+        margin: 20px 0px;
+    }
+
+    /* Style des liens */
+    a {
+        text-decoration: none; /* Supprime le soulignement par défaut des liens */
+        color: #000; /* Définit la couleur des liens en noir */
+    }
+
+    /* Style pour les marges entre les éléments du texte */
+    p, span {
+        margin: 10px 0; /* Ajoute une marge verticale de 10px entre les paragraphes et les span */
+    }
+}

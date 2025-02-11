@@ -1,0 +1,210 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #141f23;
+}
+
+
+
+.div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+
+}
+
+/* Style commun pour chaque formulaire */
+form {
+    background-image: url("../../foret.png"); /* image pour le fond */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour ajouter de la profondeur */
+    text-align: center;
+    width : 35%; /* largeur de l'encadrer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 25px auto 20px auto;
+
+}
+
+div .input-box{
+    width: 100%; /* largeur */
+    height: 70px;
+    background: #141f23;
+    margin:auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input-box input{
+    border: none;
+    color: white;
+    width: 100%;
+    height: 50px;
+    background: transparent; /* pour que la barre de l'input soit invisible */
+    border-radius: 15px;
+    border-bottom: 2px solid white; /* pour que le bas de la bordure soit blanc */
+}
+
+button{
+    margin : 10px;
+    border-radius: 15px;
+    color: black;
+    background-color: lightgreen;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    font-family: Futura ;
+    font-weight: bold;
+}
+button:active{
+    background-color: #93cdb9;
+}
+
+
+
+
+a {
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    color: #e47fd7; /* Définit la couleur des liens */
+}
+
+/* Style pour les marges entre les éléments du texte */
+p, span {
+    margin: 10px 0; /* Ajoute une marge verticale de 10px entre les paragraphes et les span */
+}
+
+
+
+
+div .passwordlevel{
+    font-size: 15px;
+    margin-top: 1px;
+    margin-bottom: 12px;
+    color: white;
+}
+
+
+
+p{
+    font-family: Futura;
+}
+b{
+    font-family: Futura;
+}
+b.cop {
+    font-weight: normal;
+    font-size: 10px;
+}
+div .social-icons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 30px;
+    justify-content: center;}
+
+
+
+
+.social-icon{
+    align-content: center;
+    text-align: center;
+    margin: 40px;
+    font-size: 50px;
+    BACKGROUND-COLOR: #9b9b9b33;
+    border-radius: 25px;
+    width: 110px;
+
+}
+h3{
+    font-family: Futura;
+}
+
+
+
+
+
+
+
+
+
+
+
+u{
+    font-family: Futura;
+}
+
+
+div .textstrength{
+    font-family: Futura;
+    color: white;
+}
+
+@media screen and (max-width: 780px) {
+    /*
+        .bouton{
+            font-size: ;
+        } */
+
+    .titre{
+        font-size: xx-large;
+    }
+
+
+    .row{
+        font-size: xx-large;
+    }
+
+   
+
+    
+    .all-icons{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin-right:80px;
+    }
+    .social-icons{
+        padding-bottom:20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .social-icon {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        justify-content: center;
+
+
+    }
+
+
+
+}
+
+
+@media screen and(max-width: 400px) {
+    li{
+        margin: 20px auto 20px auto;
+    }
+    
+    .social-icon {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+
+
+    }
+
+}

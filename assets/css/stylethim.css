@@ -1,0 +1,412 @@
+.body {
+    font-family: "Futura";
+    background-color: #141f23;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+/* -------------------- tableau score -------------------------------- */
+
+.scorepage {
+    background-color: #183628;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.scoreperso {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Couleur de fond des en-têtes de tableau */
+.colonnescoreperso {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    padding: 12px; /* Ajoute un espace intérieur de 12px autour du texte dans chaque cellule */
+    text-align: left;
+    border: none; /* Supprime la bordure autour des cellules */
+}
+
+/* Appliquer des couleurs alternées sur les colonnes */
+.scoreperso td:nth-child(odd) {
+    background-color: #5f8441; /* Applique une couleur de fond pour les colonnes impaires (vert moyen) */
+}
+
+.scoreperso td:nth-child(even) {
+    background-color: #1b5153; /* Applique une couleur de fond pour les colonnes paires (vert foncé) */
+}
+
+/* Style pour l'en-tête du tableau */
+.scoreperso th {
+    background-color: #cccccc; /* Définit la couleur de fond de l'en-tête (gris clair) */
+    color: #000; /* Couleur du texte de l'en-tête en noir */
+}
+
+
+
+
+
+
+
+.pp_size img{
+    width: 150px;
+    height: auto;
+    border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* -------------------------- tableau comptes --------------------------- */
+
+.tablename {
+    background-color: #183628;
+    margin: 0 auto; /* Centre le tableau horizontalement */
+    padding: 20px; /* Ajoute de l'espace entre le tableau et les bords de la page */
+    max-width: 90%;
+}
+
+.infoperso {
+    width: 100%;
+    border-collapse: collapse; /* Supprime les espaces entre les bordures des cellules du tableau */
+}
+
+/* Couleur de fond des en-têtes de tableau */
+.colonneinfoperso {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: none; /* Supprime la bordure blanche autour des cellules */
+    border-radius: 10px;
+}
+
+/* Appliquer des couleurs alternées sur les colonnes */
+.infoperso td:nth-child(odd) {
+    background-color: #5f8441;
+}
+
+.infoperso td:nth-child(even) {
+    background-color: #5f8441;
+}
+
+/* Style pour l'en-tête du tableau */
+.infoperso th {
+    background-color: #cccccc;
+    color: #000;
+    border-radius: 10px;
+}
+
+.change{
+    background:#5f8441;
+    color:rgba(0,0,0,0.6);
+    border:1px solid rgba(0,0,0,0.4);
+    font-weight:bold;
+    padding:5px;
+    font-size: 14px;
+    cursor:pointer;
+    border-radius:0.3em;
+    box-shadow: inset 0 -0.7px 0 rgba(255,255,255,0.4),
+    inset 0 -10px 20px rgba(255,255,255,0.2),
+    0 0 0 3px rgba(100,100,100,0.1),
+    2px 2px 3px rgba(0,0,0,0.1);
+}
+.change:hover{
+        transform: scale(1.025);
+}
+
+
+
+.change{
+    background:#5f8441;
+    color:rgba(0,0,0,0.6);
+    border:1px solid rgba(0,0,0,0.4);
+    font-weight:bold;
+    padding:5px;
+    font-size: 14px;
+    cursor:pointer;
+    border-radius:0.3em;
+    box-shadow: inset 0 -0.7px 0 rgba(255,255,255,0.4),
+    inset 0 -10px 20px rgba(255,255,255,0.2),
+    0 0 0 3px rgba(100,100,100,0.1),
+    2px 2px 3px rgba(0,0,0,0.1);
+}
+.change:hover{
+        transform: scale(1.025);
+}
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Futura';
+    src: url("assets/police/Futura.ttf")
+}
+
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style général de la page */
+body {
+    overflow-x: hidden;
+    background: #407060;
+}
+
+/* Bouton flottant */
+label {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    height: 55px;
+    width: 55px;
+    background: #5f8441;
+    text-align: center;
+    line-height: 55px;
+    border-radius: 50px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style de l'icône dans le bouton */
+label i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+label i.fas {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#click:checked ~ label i.fas {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* Icône de chat dans le bouton */
+.chat-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    transition: all 0.4s ease;
+}
+
+#click:checked ~ label .chat-icon {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* Cache la checkbox */
+#click {
+    display: none;
+}
+
+/* Style de la boîte de chat */
+.page {
+    position: fixed;
+    right: 30px;
+    bottom: 0;
+    width: 350px;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: scroll;
+}
+
+/* Affiche la boîte de chat quand la checkbox est cochée */
+#click:checked ~ .page {
+    opacity: 1;
+    bottom: 85px;
+    pointer-events: auto;
+}
+
+/* Titre de la boîte de chat */
+.page .head-text {
+    line-height: 60px;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+    padding: 0 20px;
+    font-weight: 500;
+    font-size: 20px;
+    background: #5f8441;
+    position:fixed;
+    width: 350px;
+}
+
+/* Contenu de la boîte de discussion */
+.chat-box {
+    padding: 20px;
+    width: 100%;
+    max-height: 480px;
+    margin-top:52px;
+}
+
+.chat-box img{
+    max-width: 80%;
+}
+
+/* Texte dans la boîte de chat */
+.chat-box .desc-text {
+    color: #ffffff;
+    text-align: center;
+    line-height: 25px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* Style du formulaire */
+.chat-box form {
+    padding: 0px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+/* Champs de texte et bouton dans le formulaire */
+.chat-box form .field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+form .field textarea{
+    width: 100%;
+    height: 100%;
+    padding-left: 8px;
+    border: 1px solid lightgray;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    resize: none;
+}
+form .field button {
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    border: 1px solid lightgray;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+form .field textarea::placeholder {
+    color: silver;
+}
+
+form .field button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    background: #4070F4;
+    transition: all 0.3s ease;
+}
+
+.field button:active {
+    transform: scale(0.97);
+}
+
+/* Message et utilisateurs */
+.message {
+    border: 3px solid lightgray;
+    max-width: 230px;
+    background: #e9c8ea;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.message p{
+    word-wrap: break-word;
+}
+
+.useronline {
+    font-size: 13px;
+}
+
+.user {
+    border: 3px solid #3fc8f2;
+    max-width: 230px;
+    background: #3fe3f2;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px;
+    align-self: flex-end;
+}
+
+.discussion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*----------- telephone ------------ */
+@media (max-width: 768px) {
+
+    body {
+        background-color: #183628;
+        margin: 0;
+        padding: 0;
+    }
+
+    
+
+}

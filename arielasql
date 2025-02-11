@@ -1,0 +1,13 @@
+INSERT INTO `utilisateurs`(`id`, `email`, `mot_de_passe`, `pseudo`, `date_heure_inscription`, `date_heure_derniere_connexion`)
+VALUES
+('2','utilisateur1@example.com', 'mdpAlice123', 'aliceD', NOW(), NOW()),
+('3','utilisateur2@example.com', 'mdpBob456', 'bobM', NOW(), NOW()),
+('4','utilisateur3@example.com', 'mdpCharlie789', 'charlieD', NOW(), NOW()),
+('5','utilisateur4@example.com', 'mdpDavid101', 'davidP', NOW(), NOW()),
+('6','utilisateur5@example.com', 'mdpEva112', 'evaL', NOW(), NOW());
+
+----------------------------
+
+UPDATE `utilisateurs`
+SET `mot_de_passe`='Clafete123'
+WHERE id = 2
